@@ -11,7 +11,7 @@ const fetchMovies = async (genreId: number) => {
     throw new Error(`Failed to fetch movies: ${response.statusText}`);
   }
   const data = await response.json();
-  return data;
+  return data.results;
 };
 
 export default fetchMovies;
