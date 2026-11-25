@@ -1,5 +1,6 @@
 import { useMovies } from "./hooks/useMovies";
-import { MovieCard } from "./components/MovieCard/MovieCard";
+import { MovieGrid } from "./components/MovieGrid/MovieGrid";
+
 const DEFAULT_GENRE_ID = 28;
 
 const App = () => {
@@ -16,15 +17,7 @@ const App = () => {
     return <div>No movies found.</div>;
   }
 
-  return (
-    <div>
-      {movies.map((movie) => (
-        <div key={movie.id}>
-          <MovieCard movie={movie} />
-        </div>
-      ))}
-    </div>
-  );
+  return <MovieGrid movies={movies} />;
 };
 
 export default App;
