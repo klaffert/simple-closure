@@ -1,5 +1,5 @@
 import { useMovies } from "./hooks/useMovies";
-
+import { MovieCard } from "./components/MovieCard/MovieCard";
 const DEFAULT_GENRE_ID = 28;
 
 const App = () => {
@@ -19,7 +19,9 @@ const App = () => {
   return (
     <div>
       {movies.map((movie) => (
-        <div key={movie.id}>{movie.title}</div>
+        <div key={movie.id}>
+          <MovieCard movie={movie} />
+        </div>
       ))}
     </div>
   );
