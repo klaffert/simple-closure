@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import fetchMovies from "./api/tmdb";
+import { fetchMovies } from "./api/tmdb";
 
 const App = () => {
   useEffect(() => {

@@ -1,5 +1,6 @@
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 const API_BASE_URL = "https://api.themoviedb.org/3";
+const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/";
 
 const fetchMovies = async (genreId: number) => {
   const url = new URL(`${API_BASE_URL}/discover/movie`);
@@ -14,4 +15,11 @@ const fetchMovies = async (genreId: number) => {
   return data.results;
 };
 
-export default fetchMovies;
+const getPosterUrl = (posterPath: string | null, size: string = "w342") => {
+  if (!posterPath) {
+    return null;
+  }
+  return `${IMAGE_BASE_URL}${size}${posterPath}`;
+};
+
+export { fetchMovies, getPosterUrl };
