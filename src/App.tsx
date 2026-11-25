@@ -1,5 +1,6 @@
 import { useMovies } from "./hooks/useMovies";
 import { MovieGrid } from "./components/MovieGrid/MovieGrid";
+import styles from "./App.module.css";
 
 const DEFAULT_GENRE_ID = 28;
 
@@ -17,7 +18,12 @@ const App = () => {
     return <div>No movies found.</div>;
   }
 
-  return <MovieGrid movies={movies} />;
+  return (
+    <main className={styles.page}>
+      <h1>Movies</h1>
+      <MovieGrid movies={movies} />
+    </main>
+  );
 };
 
 export default App;
