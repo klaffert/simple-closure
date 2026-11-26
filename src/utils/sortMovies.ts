@@ -1,6 +1,13 @@
 import type { Movie } from "../types/movie";
 
 export type SortKey = "rating" | "releaseDate" | "title";
+
+export const SORT_OPTIONS: { value: SortKey; label: string }[] = [
+  { value: "rating", label: "Rating (high to low)" },
+  { value: "releaseDate", label: "Release Date (newest to oldest)" },
+  { value: "title", label: "Title (A to Z)" },
+];
+
 const compareReleaseDateDesc = (a: Movie, b: Movie) => {
   if (!a.release_date && !b.release_date) return 0;
   if (!a.release_date) return 1;
