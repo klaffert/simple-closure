@@ -14,6 +14,10 @@ const useMovies = (genreId: number) => {
     genreId: null,
     error: null,
   });
+
+  // TODO: Genre is currently fixed, so requests can't overlap.
+  // If it becomes dynamic, ignore stale responses in the effect cleanup
+  // (e.g. AbortController) so a slower, older request can't overwrite a newer one.
   useEffect(() => {
     fetchMovies(genreId)
       .then((movies) => {
