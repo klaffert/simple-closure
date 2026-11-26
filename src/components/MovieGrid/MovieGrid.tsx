@@ -1,15 +1,21 @@
-import { MovieCard } from "../MovieCard/MovieCard";
+import MovieCard from "../MovieCard/MovieCard";
 import type { Movie } from "../../types/movie";
 import styles from "./MovieGrid.module.css";
 
-const MovieGrid = ({ movies }: { movies: Movie[] }) => {
+type MovieGridProps = {
+  movies: Movie[];
+};
+
+const MovieGrid = ({ movies }: MovieGridProps) => {
   return (
-    <div className={styles.grid}>
+    <ul className={styles.grid}>
       {movies.map((movie) => (
-        <MovieCard key={movie.id} movie={movie} />
+        <li key={movie.id}>
+          <MovieCard movie={movie} />
+        </li>
       ))}
-    </div>
+    </ul>
   );
 };
 
-export { MovieGrid };
+export default MovieGrid;
