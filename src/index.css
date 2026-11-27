@@ -30,6 +30,9 @@
     --color-placeholder: #2f2a38;
     --color-text: #f4efe6;
     --color-text-muted: #b3aabd;
+
+    --shadow-sm: 0 1px 3px rgb(0 0 0 / 0.5);
+    --shadow-lg: 0 10px 24px rgb(0 0 0 / 0.7);
   }
 }
 

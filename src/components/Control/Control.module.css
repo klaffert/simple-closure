@@ -1,4 +1,5 @@
 .control {
+  align-items: center;
   display: flex;
-  gap: 8px;
+  gap: 0.5rem;
 }
