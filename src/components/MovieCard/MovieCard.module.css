@@ -9,6 +9,7 @@
   height: 100%;
 
   &:hover {
+    cursor: pointer;
     transform: translateY(-4px);
     box-shadow: var(--shadow-lg);
   }
